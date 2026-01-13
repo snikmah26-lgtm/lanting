@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Lanting Fikri Kebumen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Lanting Fikri</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Katalog Produk</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/lanting-jagung.jpg" alt="Lanting Jagung Bakar">
+                <h3>Lanting Jagung Bakar</h3>
+                <p class="price">Rp 5.000</p>
+                <button onclick="addToCart('Lanting Jagung Bakar', 5000)" class="btn-add">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <img src="images/lanting-sapi.jpg" alt="Lanting Sapi Panggang">
+                <h3>Lanting Sapi Panggang</h3>
+                <p class="price">Rp 5.000</p>
+                <button onclick="addToCart('Lanting Sapi Panggang', 5000)" class="btn-add">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <img src="images/lanting-keju.jpg" alt="Lanting Keju">
+                <h3>Lanting Keju</h3>
+                <p class="price">Rp 5.000</p>
+                <button onclick="addToCart('Lanting Keju', 5000)" class="btn-add">Tambah ke Keranjang</button>
+            </div>
+        </div>
+
+        <section class="cart-section">
+            <h2>Keranjang Belanja</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-total">
+                <strong>Total: Rp <span id="cart-total-price">0</span></strong>
+            </div>
+            <button onclick="checkoutWhatsApp()" class="btn-whatsapp">Checkout via WhatsApp</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
