@@ -78,3 +78,10 @@ function checkoutWhatsApp() {
 
 // Jalankan render saat halaman dimuat
 document.addEventListener('DOMContentLoaded', renderCart);
+
+function addToCart(product) {
+  const phone = "6281806943026";
+  const message = `Halo, saya ingin memesan ${product} (Rp 5.000/pcs)`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+}
+
