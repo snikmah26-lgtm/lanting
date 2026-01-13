@@ -3,73 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lanting Fikri Kebumen - Renyah & Gurih</title>
+    <title>Lanting Fikri Kebumen | Home</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav>
-        <div class="container">
-            <h1 class="logo">Lanting Fikri</h1>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#produk">Produk</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lanting Fikri</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
             </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="container">
-            <h2>Lanting Khas Kebumen</h2>
-            <p>Renyah, Gurih, dan Higienis. Camilan tradisional terbaik dari jantung Kebumen.</p>
-            <a href="#produk" class="btn-primary">Lihat Produk</a>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Lanting Khas Kebumen</h1>
+            <p>Renyah, Gurih, dan Higienis. Warisan rasa dari jantung Jawa Tengah.</p>
+            <a href="produk.html" class="btn-primary">Lihat Produk</a>
         </div>
     </header>
 
-    <section id="produk" class="container">
-        <h2 class="section-title">Produk Kami</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x200?text=Lanting+Original" alt="Lanting Original">
-                <h3>Lanting Original</h3>
-                <p class="price">Rp 15.000</p>
-                <button class="btn-buy" onclick="pesanWA('Lanting Original')">Pesan via WhatsApp</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x200?text=Lanting+Pedas" alt="Lanting Pedas">
-                <h3>Lanting Pedas</h3>
-                <p class="price">Rp 17.000</p>
-                <button class="btn-buy" onclick="pesanWA('Lanting Pedas')">Pesan via WhatsApp</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x200?text=Lanting+Balado" alt="Lanting Balado">
-                <h3>Lanting Balado</h3>
-                <p class="price">Rp 17.000</p>
-                <button class="btn-buy" onclick="pesanWA('Lanting Balado')">Pesan via WhatsApp</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="tentang" class="about">
+    <section class="features">
         <div class="container">
-            <h2 class="section-title">Tentang Lanting Fikri</h2>
-            <p>Lanting Fikri Kebumen adalah UMKM produsen lanting rumahan yang berkomitmen menjaga cita rasa tradisional Kebumen. Kami menggunakan bahan singkong pilihan dan bumbu alami tanpa pengawet berbahaya.</p>
-        </div>
-    </section>
-
-    <section id="kontak" class="container">
-        <div class="contact-box">
-            <h2>Hubungi Kami</h2>
-            <p><strong>WhatsApp:</strong> 0812-3456-7890</p>
-            <p><strong>Alamat:</strong> Jl. Pahlawan No. 123, Kebumen, Jawa Tengah</p>
+            <div class="feature-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Bahan Alami</h3>
+                <p>Terbuat dari singkong pilihan tanpa pengawet.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-medal"></i>
+                <h3>Kualitas Terjamin</h3>
+                <p>Produksi rumahan dengan standar kebersihan tinggi.</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Lanting Fikri Kebumen. Dibuat dengan ❤️</p>
+        <p>&copy; 2024 Lanting Fikri Kebumen. Dibuat dengan ❤️ untuk UMKM.</p>
     </footer>
 
     <script src="script.js"></script>
