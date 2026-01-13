@@ -8,124 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Lanting Fikri</a>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Lanting Fikri</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="tentang.html">Tentang</a></li>
                 <li><a href="kontak.html">Kontak</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
             </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Lanting Khas Kebumen</h1>
-            <p>Renyah, Gurih, dan Higienis. Warisan rasa dari jantung Jawa Tengah.</p>
-            <a href="produk.html" class="btn-primary">Lihat Produk</a>
-        </div>
+        </nav>
     </header>
 
-    <section class="features">
-        <div class="container">
-            <div class="feature-item">
-                <i class="fas fa-leaf"></i>
-                <h3>Bahan Alami</h3>
-                <p>Terbuat dari singkong pilihan tanpa pengawet.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-medal"></i>
-                <h3>Kualitas Terjamin</h3>
-                <p>Produksi rumahan dengan standar kebersihan tinggi.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Lanting Fikri Kebumen. Dibuat dengan ❤️ untuk UMKM.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produk - Lanting Fikri</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Lanting Fikri</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produk.html" class="active">Produk</a></li>
-                <li><a href="tentang.html">Tentang</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    <section class="container content-section">
-        <h2 class="section-title">Koleksi Lanting Kami</h2>
-        
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x200?text=Lanting+Original" alt="Lanting Original">
-                <div class="card-body">
-                    <h3>Lanting Original</h3>
-                    <p class="price">Rp 15.000</p>
-                    <button class="btn-add" onclick="addToCart('Lanting Original', 15000)">Tambah ke Keranjang</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x200?text=Lanting+Pedas" alt="Lanting Pedas">
-                <div class="card-body">
-                    <h3>Lanting Pedas</h3>
-                    <p class="price">Rp 17.000</p>
-                    <button class="btn-add" onclick="addToCart('Lanting Pedas', 17000)">Tambah ke Keranjang</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x200?text=Lanting+Balado" alt="Lanting Balado">
-                <div class="card-body">
-                    <h3>Lanting Balado</h3>
-                    <p class="price">Rp 17.000</p>
-                    <button class="btn-add" onclick="addToCart('Lanting Balado', 17000)">Tambah ke Keranjang</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="cart-container" id="cart-section">
-            <h3><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h3>
-            <div id="cart-items">
-                <p>Keranjang masih kosong.</p>
-            </div>
-            <div class="cart-total">
-                <strong>Total: <span id="cart-total-price">Rp 0</span></strong>
-            </div>
-            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
-                <i class="fab fa-whatsapp"></i> Checkout ke WhatsApp
-            </button>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Lanting Khas Kebumen, Renyah & Gurih</h1>
+            <p>Produksi rumahan asli Kebumen dengan bumbu pilihan dan kualitas terjamin.</p>
+            <a href="produk.html" class="btn-primary">Lihat Produk</a>
         </div>
     </section>
 
     <script src="script.js"></script>
 </body>
 </html>
-
