@@ -1,7 +1,7 @@
 // Fungsi untuk mengarahkan ke WhatsApp
 function pesanWA(namaProduk) {
     // Ganti dengan nomor WhatsApp Anda (Gunakan kode negara, misal 62 untuk Indonesia)
-    const nomorWA = "6281234567890"; 
+    const nomorWA = "6281806943026"; 
     
     // Pesan otomatis
     const pesan = "Halo Lanting Fikri Kebumen, saya ingin memesan produk: " + namaProduk;
