@@ -145,3 +145,125 @@ body {
     .hamburger { display: block; }
     .product-grid { grid-template-columns: 1fr; }
 }
+
+/* Container utama untuk tampilan laptop */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: #6B3E26;
+  padding: 16px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 24px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #F4A261;
+}
+
+.hero {
+  height: 420px;
+  background-image: url('lanting.jpg'); /* sesuaikan path */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding-top: 120px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  background: #F4A261;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 12px 0 6px;
+}
+
+.price {
+  color: #2A9D8F;
+  font-weight: bold;
+}
+
+footer {
+  background: #6B3E26;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 46px;
+  }
+}
