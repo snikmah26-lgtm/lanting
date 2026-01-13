@@ -55,3 +55,77 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Lanting Fikri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lanting Fikri</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container content-section">
+        <h2 class="section-title">Koleksi Lanting Kami</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x200?text=Lanting+Original" alt="Lanting Original">
+                <div class="card-body">
+                    <h3>Lanting Original</h3>
+                    <p class="price">Rp 15.000</p>
+                    <button class="btn-add" onclick="addToCart('Lanting Original', 15000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x200?text=Lanting+Pedas" alt="Lanting Pedas">
+                <div class="card-body">
+                    <h3>Lanting Pedas</h3>
+                    <p class="price">Rp 17.000</p>
+                    <button class="btn-add" onclick="addToCart('Lanting Pedas', 17000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x200?text=Lanting+Balado" alt="Lanting Balado">
+                <div class="card-body">
+                    <h3>Lanting Balado</h3>
+                    <p class="price">Rp 17.000</p>
+                    <button class="btn-add" onclick="addToCart('Lanting Balado', 17000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-container" id="cart-section">
+            <h3><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h3>
+            <div id="cart-items">
+                <p>Keranjang masih kosong.</p>
+            </div>
+            <div class="cart-total">
+                <strong>Total: <span id="cart-total-price">Rp 0</span></strong>
+            </div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Checkout ke WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
