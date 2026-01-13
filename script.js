@@ -1,31 +1,24 @@
-// 1. Menu Hamburger Mobile
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('navLinks');
-
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Tambahkan CSS untuk .nav-links.active di style.css jika perlu
-    });
+// 1. Fungsi Mobile Menu
+function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
 }
 
 // 2. Logika Keranjang Belanja
 let cart = JSON.parse(localStorage.getItem('lanting_cart')) || [];
 
 function addToCart(name, price) {
-    const item = { name, price, qty: 1 };
+    const itemIndex = cart.findIndex(item => item.name === name);
     
-    // Cek jika barang sudah ada
-    const existing = cart.find(i => i.name === name);
-    if (existing) {
-        existing.qty++;
+    if (itemIndex > -1) {
+        cart[itemIndex].qty += 1;
     } else {
-        cart.push(item);
+        cart.push({ name, price, qty: 1 });
     }
     
     saveCart();
     renderCart();
-    alert(name + " berhasil ditambah!");
+    alert(name + " berhasil ditambahkan!");
 }
 
 function saveCart() {
@@ -33,33 +26,27 @@ function saveCart() {
 }
 
 function renderCart() {
-    const cartItemsDiv = document.getElementById('cart-items');
-    const totalPriceSpan = document.getElementById('cart-total-price');
+    const cartContainer = document.getElementById('cart-items');
+    const totalDisplay = document.getElementById('cart-total-price');
     
-    if (!cartItemsDiv) return;
+    if (!cartContainer) return; // Mencegah error di halaman non-produk
 
-    if (cart.length === 0) {
-        cartItemsDiv.innerHTML = '<p>Keranjang masih kosong.</p>';
-        totalPriceSpan.innerText = 'Rp 0';
-        return;
-    }
-
-    let html = '';
+    cartContainer.innerHTML = '';
     let total = 0;
 
     cart.forEach((item, index) => {
-        html += `
-            <div class="cart-item">
+        const subtotal = item.price * item.qty;
+        total += subtotal;
+        cartContainer.innerHTML += `
+            <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:5px;">
                 <span>${item.name} (x${item.qty})</span>
-                <span>Rp ${(item.price * item.qty).toLocaleString()}</span>
-                <button onclick="removeItem(${index})" style="color:red; border:none; background:none; cursor:pointer">Hapus</button>
+                <span>Rp ${subtotal.toLocaleString()} 
+                <button onclick="removeItem(${index})" style="color:red; border:none; background:none; cursor:pointer; margin-left:10px;">X</button></span>
             </div>
         `;
-        total += item.price * item.qty;
     });
 
-    cartItemsDiv.innerHTML = html;
-    totalPriceSpan.innerText = 'Rp ' + total.toLocaleString();
+    totalDisplay.innerText = total.toLocaleString();
 }
 
 function removeItem(index) {
@@ -68,30 +55,26 @@ function removeItem(index) {
     renderCart();
 }
 
-// 3. Checkout WhatsApp
+// 3. WhatsApp Checkout
 function checkoutWhatsApp() {
     if (cart.length === 0) {
-        alert("Keranjang Anda kosong!");
+        alert("Keranjang masih kosong!");
         return;
     }
 
-    let nomorWA = "6281806943026"; // Ganti dengan nomor WhatsApp UMKM
-    let pesan = "Halo Lanting Fikri, saya mau pesan:%0A%0A";
+    let phone = "6281806943026"; // Ganti dengan nomor WhatsApp UMKM
+    let text = "Halo Lanting Fikri, saya mau pesan:%0A%0A";
     let total = 0;
 
     cart.forEach(item => {
-        pesan += `- ${item.name} x${item.qty} (Rp ${(item.price * item.qty).toLocaleString()})%0A`;
-        total += item.price * item.qty;
+        text += `- ${item.name} (${item.qty} pcs) = Rp ${(item.price * item.qty).toLocaleString()}%0A`;
+        total += (item.price * item.qty);
     });
 
-    pesan += `%0A*Total: Rp ${total.toLocaleString()}*`;
+    text += `%0A*Total: Rp ${total.toLocaleString()}*`;
     
-    // Reset keranjang setelah checkout
-    localStorage.removeItem('lanting_cart');
-    cart = [];
-    
-    window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
+    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
 }
 
-// Jalankan fungsi tampilkan keranjang saat halaman dimuat
+// Jalankan render saat halaman dimuat
 document.addEventListener('DOMContentLoaded', renderCart);
