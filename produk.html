@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produk - Lanting Fikri Kebumen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk - Lanting Fikri Kebumen</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-  <div class="logo">Lanting Fikri</div>
-  <div class="menu">
-    <a href="index.html">Home</a>
-    <a href="produk.html">Produk</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="kontak.html">Kontak</a>
-  </div>
-</nav>
-    </header>
 
-    <main class="container">
-        <h2 class="section-title">Katalog Produk</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="images/lanting-jagung.jpg" alt="Lanting Jagung Bakar">
-                <h3>Lanting Jagung Bakar</h3>
-                <p class="price">Rp 5.000</p>
-                <button onclick="addToCart('Lanting Jagung Bakar', 5000)" class="btn-add">Tambah ke Keranjang</button>
-            </div>
-            <div class="product-card">
-                <img src="images/lanting-sapi.jpg" alt="Lanting Sapi Panggang">
-                <h3>Lanting Sapi Panggang</h3>
-                <p class="price">Rp 5.000</p>
-                <button onclick="addToCart('Lanting Sapi Panggang', 5000)" class="btn-add">Tambah ke Keranjang</button>
-            </div>
-            <div class="product-card">
-                <img src="images/lanting-keju.jpg" alt="Lanting Keju">
-                <h3>Lanting Keju</h3>
-                <p class="price">Rp 5.000</p>
-                <button onclick="addToCart('Lanting Keju', 5000)" class="btn-add">Tambah ke Keranjang</button>
-            </div>
-        </div>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">Lanting Fikri</div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="produk.html" class="active">Produk</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PRODUK -->
+<main class="container">
+  <h1 class="section-title">Katalog Produk</h1>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="images/lanting-jagung.jpg" alt="Lanting Jagung Bakar">
+      <h3>Lanting Jagung Bakar</h3>
+      <p class="price">Rp 5.000 / pcs</p>
+      <button onclick="addToCart('Lanting Jagung Bakar', 5000)">Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/lanting-sapi.jpg" alt="Lanting Sapi Panggang">
+      <h3>Lanting Sapi Panggang</h3>
+      <p class="price">Rp 5.000 / pcs</p>
+      <button onclick="addToCart('Lanting Sapi Panggang', 5000)">Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/lanting-keju.jpg" alt="Lanting Keju">
+      <h3>Lanting Keju</h3>
+      <p class="price">Rp 5.000 / pcs</p>
+      <button onclick="addToCart('Lanting Keju', 5000)">Tambah ke Keranjang</button>
+    </div>
+
+  </div>
+
+  <!-- KERANJANG -->
+  <section class="cart-section">
+    <h2>Keranjang Belanja</h2>
+    <div id="cart-items"></div>
+    <p class="cart-total">Total: Rp <span id="total">0</span></p>
+    <button class="btn-whatsapp" onclick="checkout()">Checkout via WhatsApp</button>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
