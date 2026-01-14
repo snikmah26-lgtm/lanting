@@ -1,291 +1,71 @@
-/* Palet Warna */
-:root {
-    --brown: #6B3E26;
-    --orange: #F4A261;
-    --teal: #2A9D8F;
-    --cream: #FAF3E0;
-    --white: #FFFFFF;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: var(--cream);
-    color: #333;
+  background-color: #fff7ec;
+  color: #333;
 }
 
-/* Navbar */
-.navbar {
-    background-color: var(--brown);
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: 0.3s;
-}
-
-.nav-links li a.active, .nav-links li a:hover {
-    color: var(--orange);
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-/* Hero Section */
-.hero {
-  background-image: url('lanting.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.btn-primary {
-    background-color: var(--orange);
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-/* Grid Produk */
-.container { padding: 2rem 5%; }
-.section-title { text-align: center; margin-bottom: 2rem; color: var(--brown); }
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.product-card {
-    background: var(--white);
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.price { color: var(--brown); font-weight: bold; margin: 10px 0; }
-
-.btn-add {
-    background-color: var(--orange);
-    border: none;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Keranjang */
-.cart-section {
-    margin-top: 50px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.btn-whatsapp {
-    background-color: var(--teal);
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    width: 100%;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-
-/* Responsive (Mobile) */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Sembunyikan menu di mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: var(--brown);
-        padding: 20px;
-    }
-
-    .nav-links.active { display: flex; }
-    .hamburger { display: block; }
-    .product-grid { grid-template-columns: 1fr; }
-}
-
-/* Container utama untuk tampilan laptop */
+/* CONTAINER */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 
-header {
-  background: #6B3E26;
-  padding: 16px 0;
+/* NAVBAR */
+.navbar {
+  background: #7a4a2e;
+  padding: 15px 0;
 }
 
-nav {
+.nav-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
+.logo {
   color: #fff;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-nav a {
+.menu a {
   color: #fff;
-  margin-left: 24px;
+  margin-left: 20px;
   text-decoration: none;
   font-weight: 500;
 }
 
-nav a:hover {
-  color: #F4A261;
+.menu a.active,
+.menu a:hover {
+  text-decoration: underline;
 }
 
-.hero {
-  height: 420px;
-  background-image: url('lanting.jpg'); /* sesuaikan path */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
+/* JUDUL */
+.section-title {
   text-align: center;
-  padding-top: 120px;
+  margin: 40px 0 30px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 12px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 24px;
-}
-
-.btn {
-  background: #F4A261;
-  color: #fff;
-  padding: 14px 32px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
+/* PRODUK */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+  gap: 25px;
 }
 
 .product-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product-card h3 {
-  margin: 12px 0 6px;
-}
-
-.price {
-  color: #2A9D8F;
-  font-weight: bold;
-}
-
-footer {
-  background: #6B3E26;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 60px;
-}
-
-@media (min-width: 1024px) {
-  .hero h1 {
-    font-size: 46px;
-  }
-}
-
-
-.product-section {
-  padding: 60px 0;
-  background: #fff8f0;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.product-card {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: center;
   padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .product-card img {
@@ -300,16 +80,52 @@ footer {
 }
 
 .price {
-  font-weight: bold;
   color: #e67e22;
+  font-weight: bold;
 }
 
 .product-card button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #e67e22;
-  color: white;
+  margin-top: 12px;
+  padding: 10px 18px;
   border: none;
+  background: #e67e22;
+  color: #fff;
   border-radius: 25px;
   cursor: pointer;
+}
+
+.product-card button:hover {
+  background: #cf6d17;
+}
+
+/* KERANJANG */
+.cart-section {
+  background: #fff;
+  margin: 50px 0;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.cart-section h2 {
+  margin-bottom: 15px;
+}
+
+.cart-total {
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.btn-whatsapp {
+  width: 100%;
+  padding: 14px;
+  background: #25d366;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
 }
